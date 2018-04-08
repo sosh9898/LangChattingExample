@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8a113725c96b666fefbbc398f4978874f2ccee52">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9cd158c275a4ce5a18c4b254c7cb223f6052d245/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/.android/build-cache/87f567f5c7c2f345ff0f29c40d80332df56ea0b1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="dbbba1fc0f6c51382c3fa1f9223d1f6f9144f359">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d09bf9a166bddc6d2328af62e7fdbf063f7436ec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/.android/build-cache/9bac03d10f9a035459dfdf542b02cbaba6fd039c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="86e2c2399cfd7f8271b535b0e7d8ec092d0c6335">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_62e4002b747cbfca6ec581743391d9da646ed08a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/.android/build-cache/8d5240e27ea30abb17025624134349631814a5c5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4802b21cc23549f7eba5edb802241091ad998b35">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_984526b1e34fcacc4405765a9577799d7a492ff6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/.android/build-cache/cc7135585f21be81c35df5f00d6b3869cbe3e0b0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9e8c74e789b51b9da4070aeaed71bae36c3d244f">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d68caced5a984f961ecd1520bbf02833eabb416d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/.android/build-cache/d737f38fc502dcc445cd69eb3398137432814f03/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4262bcd49b19d558c241bf8c68470fcc6fa1ac84">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2f2dd6f03c43aac157df41128c5f2ce0f7150526/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d08e40a9f0ed5dd1f6a3d5a1fb3034945651c6c6/classes.dex" />
+    </item>
+
+</items>
