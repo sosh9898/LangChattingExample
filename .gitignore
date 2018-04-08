@@ -3,6 +3,8 @@
 *.ap_
 # files for the dex VM
 *.dex
+# Setting
+app/src/main/java/jy/sopt/chattingsample/setting/
 # Java class files
 *.class
 # generated files
@@ -20,5 +22,3 @@ proguard/
 *.ipr
 *.iws
 .idea/*.iml
-# Server Key
-app/src/main/java/jy/sopt/chattingsample/setting/
