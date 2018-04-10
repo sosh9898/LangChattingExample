@@ -47,7 +47,7 @@ public class ChatListAdapter extends RecyclerView.Adapter {
         View view;
         switch(viewType){
             case CHAT_TEXT:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_chat_text_item, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chatting_items, parent, false);
                 return new ChatTextViewHolder(view);
             case CHAT_IMAGE:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_chat_image_item, parent, false);
@@ -76,7 +76,9 @@ public class ChatListAdapter extends RecyclerView.Adapter {
     }
 
     class ChatTextViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.chat_text)TextView chatText;
+        @BindView(R.id.your_content)TextView youContent;
+        @BindView(R.id.my_content)TextView meContent;
+        @BindView(R.id.your_profile)ImageView youProfile;
 
         public ChatTextViewHolder(View itemView) {
             super(itemView);
@@ -86,11 +88,23 @@ public class ChatListAdapter extends RecyclerView.Adapter {
 
         public void bindView(ChatDetail chatItem){
 
+            if(chatItem.getSenderToken().equals(SharedPreferencesService.getInstance().getPrefStringData("fcm_token"))) {
+                youProfile.setVisibility(View.INVISIBLE);
+                meContent.setVisibility(View.VISIBLE);
+                youContent.setVisibility(View.GONE);
+                meContent.setText(chatItem.getContent());            }
+            else{
+                meContent.setVisibility(View.GONE);
+                youContent.setVisibility(View.VISIBLE);
+                youContent.setText(chatItem.getContent());
+                if(getAdapterPosition() != 0) {
+                    if (chatDetailList.get(getAdapterPosition() - 1).getSenderToken().equals(chatItem.getSenderToken()))
+                        youProfile.setVisibility(View.INVISIBLE);
 
-            if(chatItem.getSenderToken().equals(SharedPreferencesService.getInstance().getPrefStringData("fcm_token")))
-                chatText.setText("나 : " + chatItem.getContent());
-            else
-                chatText.setText(chatItem.getSenderName() + " : " + chatItem.getContent());
+                    else
+                        youProfile.setVisibility(View.VISIBLE);
+                }
+            }
 
         }
     }

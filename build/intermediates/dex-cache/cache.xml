@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="8a113725c96b666fefbbc398f4978874f2ccee52">
+        sha1="31223cf91a8fec0676c02e90845f2171c0696487">
         <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9cd158c275a4ce5a18c4b254c7cb223f6052d245/classes.dex" />
     </item>
     <item
@@ -54,6 +54,15 @@
         revision="26.0.0"
         sha1="4262bcd49b19d558c241bf8c68470fcc6fa1ac84">
         <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2f2dd6f03c43aac157df41128c5f2ce0f7150526/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jyoung/.android/build-cache/489c25b8507e7a3a45c67e323d991c1d9ddf1d1c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="803c4c913beac8f7980d680c725a40835d1d7c77">
+        <dex dex="/Users/jyoung/AndroidStudioProjects/ChattingSample/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ec41e73c6fd0f045f265652be9e0d69f8beef823/classes.dex" />
     </item>
     <item
         is-multidex="true"

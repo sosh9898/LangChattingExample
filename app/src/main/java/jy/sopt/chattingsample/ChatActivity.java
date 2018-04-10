@@ -40,7 +40,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -51,7 +54,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import gun0912.tedbottompicker.TedBottomPicker;
 
-import static jy.sopt.chattingsample.MainActivity.SERVER_KEY;
+import static jy.sopt.chattingsample.setting.FirebaseMessagingService.SERVER_KEY;
 
 public class ChatActivity extends AppCompatActivity {
     @BindView(R.id.chat_rcv)
@@ -147,7 +150,7 @@ public class ChatActivity extends AppCompatActivity {
             chatList.add(new ChatDetail(name, token, content, type, filename));
         }
 
-        Log.d("size", chatList.size() + "");
+        chatRcv.scrollToPosition(chatList.size() -1);
 
         chatListAdapter.updateList(chatList);
     }
@@ -159,7 +162,17 @@ public class ChatActivity extends AppCompatActivity {
 
         reference.updateChildren(map);
 
-        DatabaseReference root = reference.child(key);
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = Calendar.getInstance().getTime();
+        String postdate = dateformat.format(date);
+
+        reference.updateChildren(map);
+        DatabaseReference root = reference.getParent();
+        root.child("recentMessage").setValue(chatEdit.getText().toString());
+        root.child("recentMessageTime").setValue(postdate);
+        root.child("totalCount").setValue(chatList.size());
+
+        DatabaseReference content = reference.child(key);
 
         Map<String, Object> objectMap = new HashMap<String, Object>();
 
@@ -169,7 +182,7 @@ public class ChatActivity extends AppCompatActivity {
         objectMap.put("mediaType", 101);
         objectMap.put("fileName", "");
 
-        root.updateChildren(objectMap);
+        content.updateChildren(objectMap);
 
         sendPostToFCM(chatEdit.getText().toString());
 

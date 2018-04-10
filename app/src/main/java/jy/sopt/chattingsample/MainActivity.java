@@ -15,11 +15,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -54,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
         reference = FirebaseDatabase.getInstance()
                 .getReference("roomList");
+
+        Query recentMessageTimeQuery = reference.orderByChild("recentMessageTime");
+
         setRecycler();
 
         if (SharedPreferencesService.getInstance().getPrefStringData("user").equals(""))
@@ -64,22 +70,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        reference.addValueEventListener(new ValueEventListener() {
+        recentMessageTimeQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 roomList.clear();
-//
-//                Iterator i = dataSnapshot.getChildren().iterator();
-//
-//                while (i.hasNext()){
-//
-//                }
-
                 for (DataSnapshot dataSnapshot2 : dataSnapshot.getChildren()) {
                     roomList.add(dataSnapshot2.getValue(Room.class));
                 }
 
                 Log.i("room count", roomList.size() + "");
+
+                Collections.sort(roomList, new Comparator<Room>() {
+                    @Override
+                    public int compare(Room room, Room t1) {
+                        return t1.getRecentMessageTime().compareTo(room.getRecentMessageTime());
+                    }
+                });
                 roomListAdapter.updateList(roomList);
 
             }

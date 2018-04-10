@@ -32,7 +32,7 @@ public class RoomListAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_room_listitem, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chatting_room_items, parent, false);
         view.setOnClickListener(onClickListener);
         return new RoomListViewHolder(view);
     }
@@ -48,8 +48,14 @@ public class RoomListAdapter extends RecyclerView.Adapter {
     }
 
     class RoomListViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.room_name)
+        @BindView(R.id.chatting_name)
         TextView roomName;
+        @BindView(R.id.chatting_time)
+        TextView recentChatTime;
+        @BindView(R.id.chatting_count)
+        TextView chatCount;
+        @BindView(R.id.chatting_content)
+        TextView recentChatContent;
 
         public RoomListViewHolder(View itemView) {
             super(itemView);
@@ -58,6 +64,9 @@ public class RoomListAdapter extends RecyclerView.Adapter {
 
         public void bindView(Room roomItem){
             roomName.setText(roomItem.getRoomName());
+            recentChatContent.setText(roomItem.getRecentMessage());
+            recentChatTime.setText(roomItem.getRecentMessageTime());
+
         }
     }
 }
