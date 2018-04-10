@@ -1,8 +1,8 @@
 # # LangChattingExample
 
-![img](./image/splash_logo.png)
-
 언어교류 서비스 "Lang" 에 추가될 chatting 기능 Semi Project 입니다.
+
+![img](./image/splash_logo.png)
 
 주 기능은 클라우드 서비스 Firebase를 활용하였으며, 다음과 같습니다.  **Realtime DB** ( 기본 채팅 ) , **Storage** ( 사진 전송 ), **Notification** ( 알림 기능 )
 
