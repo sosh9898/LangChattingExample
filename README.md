@@ -4,7 +4,7 @@
 
 
 
-![img](./image/splash_logo.png)
+![img](./image/splash_logo.png){: .center}
 
 
 
