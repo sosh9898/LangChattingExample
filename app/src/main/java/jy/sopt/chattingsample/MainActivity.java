@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
         TedPermission.with(this)
                 .setPermissionListener(permissionlistener)
-                .setRationaleMessage("에브리푸디를 100% 이용하기 위한 권한을 주세요!!")
+                .setRationaleMessage("LANG 을 100% 이용하기 위해 다음의 권한이 필요합니다!!")
                 .setDeniedMessage("왜 거부하셨어요...\n하지만 [설정] > [권한] 에서 권한을 허용할 수 있어요.")
                 .setPermissions(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 .check();
